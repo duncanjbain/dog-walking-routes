@@ -13,8 +13,8 @@ const LatestWalkCard = () => {
       <h3 className="font-extrabold text-2xl text-gray-600">
         Harpenden Forest
       </h3>
-      <p className="font-semibold text-base">Hertfordshire</p>
-      <ul className="flex flex-row">
+      <p className="font-semibold text-base text-green-800">Hertfordshire</p>
+      <ul className="flex flex-row text-gray-600">
           <li className="pr-2">#Woods</li>
           <li className="pr-2">#Parking</li>
           <li className="pr-2">#Toilets</li>
