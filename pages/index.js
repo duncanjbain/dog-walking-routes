@@ -4,7 +4,7 @@ import LatestWalksContainer from "../components/LatestWalksContainer";
 
 export default function Home() {
   return (
-    <div className="container mx-auto w-full lg:w-1/2">
+    <div className="container mx-auto w-full lg:w-2/3">
       <NavBar />
       <Hero />
       <LatestWalksContainer />

@@ -1,23 +1,34 @@
 import Image from "next/image";
-import dogWalk from "../public/images/dog_walking_3.jpg";
+import Link from "next/link";
+import Anchor from "./Anchor";
 
-const LatestWalkCard = () => {
+const LatestWalkCard = ({
+  imageSrc,
+  imageAltText,
+  walkCounty,
+  walkName,
+  walkTags,
+  walkNameSlug,
+  walkCountySlug
+}) => {
   return (
     <div>
       <Image
-        src={dogWalk}
+        src={imageSrc}
         className="rounded-lg"
         quality={100}
-        alt="Dog walk route image"
+        alt={imageAltText}
       />
-      <h3 className="font-extrabold text-2xl text-gray-600">
-        Harpenden Forest
-      </h3>
-      <p className="font-semibold text-base text-green-800">Hertfordshire</p>
+      <Link href={`/walks/${walkCountySlug}/${walkNameSlug}`} passHref>
+        <Anchor>
+          <h3 className="font-extrabold text-2xl text-gray-600 hover:underline">{walkName}</h3>
+        </Anchor>
+      </Link>
+      <p className="font-semibold text-base text-green-800">{walkCounty}</p>
       <ul className="flex flex-row text-gray-600">
-          <li className="pr-2">#Woods</li>
-          <li className="pr-2">#Parking</li>
-          <li className="pr-2">#Toilets</li>
+        {walkTags.map((walkTag) => (
+          <li className="pr-2">{`#${walkTag}`}</li>
+        ))}
       </ul>
     </div>
   );
