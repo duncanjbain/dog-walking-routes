@@ -3,11 +3,11 @@ import NavLink from './NavLink';
 
 const NavBar = () => {
   return (
-    <header className="md:my-4 flex flex-col items-center md:flex-row md:justify-between">
+    <header className="my-2 md:my-4 flex flex-col items-center md:flex-row md:justify-between">
       <h1 className="font-extrabold text-3xl text-green-800">
         <Link href="/">Dog Walking Routes</Link>
       </h1>
-      <nav>
+      <nav className="my-2 md:my-0">
         <ul className="flex items-center">
           <NavLink href="/about">Home</NavLink>
           <NavLink href="/projects">Dog Walks</NavLink>
