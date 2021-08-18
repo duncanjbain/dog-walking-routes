@@ -3,8 +3,8 @@ import LatestWalkCard from "../components/LatestWalkCard";
 
 const LatestWalksContainer = () => {
   return (
-    <section>
-      <div className="mb-2 md:mb-4">
+    <section className="mb-8 md:mb-10">
+      <div className="mb-2 md:mb-8">
         <h2 className="text-gray-600 text-2xl lg:text-3xl font-bold">
           Latest walks added
         </h2>
@@ -12,7 +12,7 @@ const LatestWalksContainer = () => {
           Explore some recently added walks
         </p>
       </div>
-      <div className="grid gap-6 grid-cols-2 lg:grid-cols-4 mb-6">
+      <div className="grid gap-6 grid-cols-2 lg:grid-cols-3 mb-6">
         <LatestWalkCard
           imageSrc={dogWalkImage}
           walkCountySlug="hertfordshire"

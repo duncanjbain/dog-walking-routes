@@ -1,12 +1,10 @@
-import Image from "next/image";
-import heroImage from "../public/images/hero.jpg";
 const Hero = () => {
   return (
     <div
-      className="w-auto bg-cover bg-center flex items-end h-52 xl:h-96 mb-4 lg:mb-8"
+      className="w-auto bg-cover bg-center flex items-end h-52 md:h-64 xl:h-96 mb-4 lg:mb-8"
       style={{backgroundImage: `url('/images/hero.jpg')` }}
     >
-      <div className="flex items-center justify-between h-24 xl:h-30 w-full bg-yellow-400 bg-opacity-70">
+      <div className="flex items-center justify-between h-18 md:h-20 xl:h-32 w-full bg-yellow-400 bg-opacity-70">
         <div className="text-left flex flex-row items-center justify-between w-full p-2 xl:p-4">
           <h1 className="text-green-900 text-xl md:text-2xl xl:text-3xl 2xl:text-4xl font-bold w-2/3 mx-2">
             Explore the great outdoors with mans best friend!
