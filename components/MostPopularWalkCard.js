@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import Anchor from "./Anchor";
-import dogWalk from "../public/images/dog_walking_2.jpg";
 
 const MostPopularWalkCard = ({
   imageSrc,
