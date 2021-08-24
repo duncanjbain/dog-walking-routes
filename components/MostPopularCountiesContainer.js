@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Anchor from "./Anchor";
 const MostPopularCountiesContainer = ({ mostPopularCounties }) => {
-  console.log(mostPopularCounties);
   return (
     <section className="mb-8">
       <div className="mb-2 md:mb-4">

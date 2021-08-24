@@ -4,6 +4,7 @@ import LatestWalksContainer from "../components/LatestWalksContainer";
 import MostPopularWalksContainer from "../components/MostPopularWalksContainer";
 import MostPopularCountiesContainer from "../components/MostPopularCountiesContainer";
 import Footer from "../components/Footer";
+import fetchWalks, { fetchLatestWalks } from "../utils/contentful/getContentfulWalks";
 
 const dummyPopularCounties = [
   {
@@ -24,13 +25,14 @@ const dummyPopularCounties = [
   },
 ];
 
-export default function Home() {
+export default function Home({latestWalks}) {
+  console.log(latestWalks)
   return (
     <div className="flex flex-col min-h-screen mx-auto w-full lg:w-2/3">
       <NavBar />
       <Hero />
       <main className="flex-grow ">
-        <LatestWalksContainer />
+        <LatestWalksContainer latestWalks={latestWalks}/>
         <MostPopularWalksContainer />
         <MostPopularCountiesContainer
           mostPopularCounties={dummyPopularCounties}
@@ -39,4 +41,11 @@ export default function Home() {
       <Footer />
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const latestWalks = await fetchLatestWalks();
+  return { props: {
+    latestWalks,
+  }}
 }
