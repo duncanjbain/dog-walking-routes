@@ -17,7 +17,7 @@ walk
         quality={75}
         alt={walk.fields.routePhotos[0].fields.description}
       />
-      <Link href={`/walks/${walk.fields.countrySlug}/${walk.fields.nameSlug}`} passHref>
+      <Link href={`/walks/${walk.fields.countySlug}/${walk.fields.nameSlug}`} passHref>
         <Anchor>
           <h3 className="font-extrabold text-base md:text-2xl text-gray-600 hover:underline">
             {walk.fields.routeName}
