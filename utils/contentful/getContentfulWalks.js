@@ -17,4 +17,13 @@ export const fetchLatestWalks = async (numberOfWalks = 6) => {
     if(latestWalks.items) return latestWalks.items;
 }
 
+export const fetchByNameSlug = async (slug) => {
+    const singleWalk = await client.getEntries({
+        content_type: "dogWalkingRoute",
+        'fields.nameSlug[in]': slug,
+    })
+    console.log(singleWalk.items)
+    return singleWalk.items;
+}
+
 export default fetchWalks;

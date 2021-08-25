@@ -26,7 +26,6 @@ const dummyPopularCounties = [
 ];
 
 export default function Home({latestWalks}) {
-  console.log(latestWalks)
   return (
     <div className="flex flex-col min-h-screen mx-auto container w-full">
       <NavBar />
