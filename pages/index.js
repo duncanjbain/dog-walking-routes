@@ -28,10 +28,10 @@ const dummyPopularCounties = [
 export default function Home({latestWalks}) {
   console.log(latestWalks)
   return (
-    <div className="flex flex-col min-h-screen mx-auto w-full lg:w-2/3">
+    <div className="flex flex-col min-h-screen mx-auto container w-full">
       <NavBar />
       <Hero />
-      <main className="flex-grow ">
+      <main className="px-2">
         <LatestWalksContainer latestWalks={latestWalks}/>
         <MostPopularWalksContainer />
         <MostPopularCountiesContainer

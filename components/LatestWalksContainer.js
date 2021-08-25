@@ -12,7 +12,7 @@ const LatestWalksContainer = ({ latestWalks }) => {
           Explore some recently added walks
         </p>
       </div>
-      <div className="grid gap-6 grid-cols-2 lg:grid-cols-3 mb-6">
+      <div className="grid gap-6 grid-cols-2 xl:grid-cols-3 mb-6">
         {latestWalks.map((latestWalk) => (
           <LatestWalkCard key={latestWalk.sys.id} walk={latestWalk} />
         ))}
