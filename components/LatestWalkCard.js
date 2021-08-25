@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Anchor from "./Anchor";
 
+import contentfulImage from "../utils/contentful/contentfulImage";
+
 const LatestWalkCard = ({
 walk
 }) => {
@@ -10,10 +12,11 @@ walk
     <div>
       <Image
           src={`https:${walk.fields.routePhotos[0].fields.file.url}`}
+          loader={contentfulImage}
         className="rounded-lg"
         width={428}
         height={280}
-        layout="responsive"
+        layout="intrinsic"
         quality={75}
         alt={walk.fields.routePhotos[0].fields.description}
       />

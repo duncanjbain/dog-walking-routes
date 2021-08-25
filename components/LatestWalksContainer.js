@@ -1,4 +1,3 @@
-import dogWalkImage from "../public/images/dog_walking_3.jpg";
 import LatestWalkCard from "../components/LatestWalkCard";
 
 const LatestWalksContainer = ({ latestWalks }) => {
