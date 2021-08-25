@@ -1,3 +1,4 @@
+import Link from "next/link";
 import NavBar from "../../../components/NavBar";
 import Footer from "../../../components/Footer";
 import {
@@ -33,7 +34,7 @@ const WalkDetails = ({ walk }) => {
           <div>
             <h3>what3words location</h3>
             <p>
-              dog.walking.field <a href="/">View on what3words</a>
+              dog.walking.field <Link href="/">View on what3words</Link>
             </p>
           </div>
           {walk.fields.locationDetails && (
