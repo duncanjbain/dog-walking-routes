@@ -25,7 +25,7 @@ walk
         </Anchor>
       </Link>
       <p className="font-semibold text-base text-green-800">{walk.fields.routeCounty}</p>
-      <ul className="flex flex-row text-gray-600">
+      <ul className="flex flex-row flex-wrap text-gray-600">
         {walk.fields.routeTags.slice(0,3).map((walkTag) => (
           <li key={walkTag} className="text-sm md:text-base pr-2">{`#${walkTag}`}</li>
         ))}
