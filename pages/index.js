@@ -4,7 +4,7 @@ import LatestWalksContainer from "../components/LatestWalksContainer";
 import MostPopularWalksContainer from "../components/MostPopularWalksContainer";
 import MostPopularCountiesContainer from "../components/MostPopularCountiesContainer";
 import Footer from "../components/Footer";
-import fetchWalks, { fetchLatestWalks } from "../utils/contentful/getContentfulWalks";
+import { fetchLatestWalks } from "../utils/contentful/getContentfulWalks";
 
 const dummyPopularCounties = [
   {

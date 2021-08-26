@@ -17,7 +17,8 @@
     "contentful": "^8.5.0",
     "next": "11.1.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-map-gl": "^6.1.16"
   },
   "devDependencies": {
     "autoprefixer": "^10.3.1",

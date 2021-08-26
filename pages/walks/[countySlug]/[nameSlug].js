@@ -1,10 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NavBar from "../../../components/NavBar";
 import Footer from "../../../components/Footer";
 import Anchor from "../../../components/Anchor";
+import Map from '../../../components/Map';
 import {
   fetchByNameSlug,
   fetchWalks,
@@ -12,7 +14,15 @@ import {
 import contentfulImage from "../../../utils/contentful/contentfulImage";
 
 const WalkDetails = ({ walk }) => {
+    const Map = dynamic(() => import("../../../components/Map"), {
+        loading: () => "Loading...",
+        ssr: false
+      });
   return (
+      <>
+    <head>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+    </head>
     <div className="flex flex-col min-h-screen mx-auto container md:container md:px-16 w-full">
       <NavBar />
       <main className="px-2 sm:px-0">
@@ -82,10 +92,12 @@ const WalkDetails = ({ walk }) => {
           </div>
         </div>
         </div>
-        
+        <div><Map /></div>
+
       </main>
       <Footer />
     </div>
+    </>
   );
 };
 
