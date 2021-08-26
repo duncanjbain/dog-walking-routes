@@ -22,7 +22,6 @@ export const fetchByNameSlug = async (slug) => {
         content_type: "dogWalkingRoute",
         'fields.nameSlug[in]': slug,
     })
-    console.log(singleWalk.items)
     return singleWalk.items;
 }
 

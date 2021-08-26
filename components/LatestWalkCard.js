@@ -7,16 +7,15 @@ import contentfulImage from "../utils/contentful/contentfulImage";
 const LatestWalkCard = ({
 walk
 }) => {
-  console.log(walk);
   return (
     <div>
       <Image
           src={`https:${walk.fields.routePhotos[0].fields.file.url}`}
           loader={contentfulImage}
         className="rounded-lg"
-        width={428}
-        height={280}
-        layout="intrinsic"
+        width={400}
+        height={250}
+        layout="responsive"
         quality={75}
         alt={walk.fields.routePhotos[0].fields.description}
       />

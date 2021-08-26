@@ -8,7 +8,7 @@ const NavBar = () => {
         <Link href="/">Dog Walking Routes</Link>
       </h1>
       <nav className="my-2 md:my-0">
-        <ul className="flex items-center">
+        <ul className="flex items-center space-x-3">
           <NavLink href="/about">Home</NavLink>
           <NavLink href="/projects">Dog Walks</NavLink>
           <NavLink href="/uses">About</NavLink>
