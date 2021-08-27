@@ -4,7 +4,7 @@ import LatestWalksContainer from "../components/LatestWalksContainer";
 import MostPopularWalksContainer from "../components/MostPopularWalksContainer";
 import MostPopularCountiesContainer from "../components/MostPopularCountiesContainer";
 import Footer from "../components/Footer";
-import fetchWalks, { fetchLatestWalks } from "../utils/contentful/getContentfulWalks";
+import { fetchLatestWalks } from "../utils/contentful/getContentfulWalks";
 
 const dummyPopularCounties = [
   {
@@ -26,12 +26,11 @@ const dummyPopularCounties = [
 ];
 
 export default function Home({latestWalks}) {
-  console.log(latestWalks)
   return (
-    <div className="flex flex-col min-h-screen mx-auto container w-full">
+    <div className="flex flex-col min-h-screen mx-auto container md:container md:px-16 w-full">
       <NavBar />
       <Hero />
-      <main className="px-2">
+      <main className="px-2 sm:px-0">
         <LatestWalksContainer latestWalks={latestWalks}/>
         <MostPopularWalksContainer />
         <MostPopularCountiesContainer
