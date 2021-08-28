@@ -5,6 +5,7 @@ import MostPopularWalksContainer from "../components/MostPopularWalksContainer";
 import MostPopularCountiesContainer from "../components/MostPopularCountiesContainer";
 import Footer from "../components/Footer";
 import { fetchLatestWalks } from "../utils/contentful/getContentfulWalks";
+import getLatLon3Words from "../utils/getWhat3Words";
 
 const dummyPopularCounties = [
   {
