@@ -4,29 +4,9 @@ import LatestWalksContainer from "../components/LatestWalksContainer";
 import MostPopularWalksContainer from "../components/MostPopularWalksContainer";
 import MostPopularCountiesContainer from "../components/MostPopularCountiesContainer";
 import Footer from "../components/Footer";
-import { fetchLatestWalks } from "../utils/contentful/getContentfulWalks";
-import getLatLon3Words from "../utils/getWhat3Words";
+import { fetchAllWalks, fetchLatestWalks } from "../utils/contentful/getContentfulWalks";
 
-const dummyPopularCounties = [
-  {
-    countyNameSlug: "hertfordshire",
-    countyName: "Hertfordshire",
-  },
-  {
-    countyNameSlug: "cambridgeshire",
-    countyName: "Cambridgeshire",
-  },
-  {
-    countyNameSlug: "oxfordshire",
-    countyName: "Oxfordshire",
-  },
-  {
-    countyNameSlug: "kent",
-    countyName: "Kent",
-  },
-];
-
-export default function Home({latestWalks}) {
+export default function Home({latestWalks, allCounties}) {
   return (
     <div className="flex flex-col min-h-screen mx-auto container md:container md:px-16 w-full">
       <NavBar />
@@ -35,7 +15,7 @@ export default function Home({latestWalks}) {
         <LatestWalksContainer latestWalks={latestWalks}/>
         <MostPopularWalksContainer />
         <MostPopularCountiesContainer
-          mostPopularCounties={dummyPopularCounties}
+          mostPopularCounties={allCounties}
         />
       </main>
       <Footer />
@@ -45,7 +25,15 @@ export default function Home({latestWalks}) {
 
 export async function getStaticProps() {
   const latestWalks = await fetchLatestWalks();
+  const allWalks = await fetchAllWalks()
+  const allCounties = [...new Map(allWalks.map((walk) => (
+    {
+      "countyNameSlug": walk.fields.countySlug,
+      "countyName": walk.fields.routeCounty,
+    }
+  )).map(item => [item.countyNameSlug, item])).values()]
   return { props: {
     latestWalks,
+    allCounties
   }}
 }

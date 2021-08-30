@@ -5,16 +5,16 @@ import dynamic from "next/dynamic";
 import Head from "next/head";
 import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import NavBar from "../../../components/NavBar";
-import Footer from "../../../components/Footer";
-import Anchor from "../../../components/Anchor";
-import Map from "../../../components/Map";
+import NavBar from "../../components/NavBar";
+import Footer from "../../components/Footer";
+import Anchor from "../../components/Anchor";
+import Map from "../../components/Map";
 import {
   fetchByNameSlug,
-  fetchWalks,
-} from "../../../utils/contentful/getContentfulWalks";
-import getLatLon3Words from "../../../utils/getWhat3Words";
-import contentfulImage from "../../../utils/contentful/contentfulImage";
+  fetchAllWalks,
+} from "../../utils/contentful/getContentfulWalks";
+import getLatLon3Words from "../../utils/getWhat3Words";
+import contentfulImage from "../../utils/contentful/contentfulImage";
 
 const WalkDetails = ({ walk, what3words }) => {
   return (
@@ -106,11 +106,10 @@ const WalkDetails = ({ walk, what3words }) => {
 };
 
 export const getStaticPaths = async () => {
-  const walks = await fetchWalks();
+  const walks = await fetchAllWalks();
   const paths = walks.map((walk) => ({
     params: {
       nameSlug: walk.fields.nameSlug,
-      countySlug: walk.fields.countySlug,
     },
   }));
   return { paths, fallback: false };

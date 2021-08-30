@@ -9,9 +9,9 @@ const NavBar = () => {
       </h1>
       <nav className="my-2 md:my-0">
         <ul className="flex items-center space-x-3">
-          <NavLink href="/about">Home</NavLink>
-          <NavLink href="/projects">Dog Walks</NavLink>
-          <NavLink href="/uses">About</NavLink>
+          <NavLink href="/">Home</NavLink>
+          <NavLink href="/walks">Dog Walks</NavLink>
+          <NavLink href="/about">About</NavLink>
         </ul>
       </nav>
     </header>
