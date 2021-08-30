@@ -14,13 +14,14 @@ const MostPopularCountiesContainer = ({ mostPopularCounties }) => {
       <div>
         <ul className="grid grid-cols-2 lg:grid-cols-4">
           {mostPopularCounties.map((popularCounty) => (
-            <Link key={popularCounty.countyNameSlug} href={`/county/${popularCounty.countyNameSlug}`} passHref>
-              <Anchor>
-                <li className="text-xl md:text-2xl text-green-900 hover:underline">
-                  {popularCounty.countyName} →
-                </li>
-              </Anchor>
-            </Link>
+            <li key={popularCounty.countySlug} className="text-xl md:text-2xl text-green-900 hover:underline">
+              <Link
+                href={`/county/${popularCounty.countyNameSlug}`}
+                passHref
+              >
+                <Anchor>{popularCounty.countyName} →</Anchor>
+              </Link>
+            </li>
           ))}
         </ul>
       </div>
