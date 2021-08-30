@@ -37,7 +37,11 @@ const WalkDetails = ({ walk, what3words }) => {
             {walk.fields.routeName}
           </h2>
           <p className="font-semibold text-2xl text-gray-600 px-1">
-            <FontAwesomeIcon icon={faMapMarkerAlt} /> {walk.fields.routeCounty}
+            <FontAwesomeIcon icon={faMapMarkerAlt} /> <Link href={`/county/${walk.fields.countySlug}`} passHref>
+              <Anchor className="hover:underline">
+              {walk.fields.routeCounty}
+              </Anchor>
+              </Link>
           </p>
         </div>
         <div className="lg:w-2/3 lg:ml-4">
