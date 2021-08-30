@@ -6,7 +6,7 @@ const client = require('contentful').createClient({
     accessToken: accessToken,
 });
 
-export const fetchWalks = async () => {
+export const fetchAllWalks = async () => {
     const walks = await client.getEntries();
     if(walks.items) return walks.items
     console.log(`Error getting entries for ${contentType.name}`)
@@ -25,4 +25,10 @@ export const fetchByNameSlug = async (slug) => {
     return singleWalk.items;
 }
 
-export default fetchWalks;
+export const fetchByCountySlug = async (countySlug) => {
+    const walksByCounty = await client.getEntries({
+        content_type: "dogWalkingRoute",
+        'fields.countySlug[in]': countySlug,
+    })
+    return walksByCounty
+}

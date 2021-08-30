@@ -1,4 +1,4 @@
-import LatestWalkCard from "../components/LatestWalkCard";
+import SingleWalkCard from "./SingleWalkCard";
 
 const LatestWalksContainer = ({ latestWalks }) => {
   return (
@@ -13,7 +13,7 @@ const LatestWalksContainer = ({ latestWalks }) => {
       </div>
       <div className="grid gap-6 grid-cols-2 xl:grid-cols-3 mb-6">
         {latestWalks.map((latestWalk) => (
-          <LatestWalkCard key={latestWalk.sys.id} walk={latestWalk} />
+          <SingleWalkCard key={latestWalk.sys.id} walk={latestWalk} />
         ))}
 
       </div>

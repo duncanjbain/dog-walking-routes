@@ -7,7 +7,6 @@ const getLatLon3Words = async ({lat, lon}) => {
         "X-Api-Key": apiKey,
     }
     const response = await fetch(queryUrl, {headers: keyHeader})
-    console.log(response)
     return response.json();
 
 }
