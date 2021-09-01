@@ -14,7 +14,7 @@ const MostPopularCountiesContainer = ({ mostPopularCounties }) => {
       <div>
         <ul className="grid grid-cols-2 lg:grid-cols-4">
           {mostPopularCounties.map((popularCounty) => (
-            <li key={popularCounty.countySlug} className="text-xl md:text-2xl text-green-900 hover:underline">
+            <li key={popularCounty.countyNameSlug} className="text-xl md:text-2xl text-green-900 hover:underline">
               <Link
                 href={`/county/${popularCounty.countyNameSlug}`}
                 passHref

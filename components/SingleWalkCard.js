@@ -7,7 +7,6 @@ import contentfulImage from "../utils/contentful/contentfulImage";
 const SingleWalkCard = ({
 walk
 }) => {
-  console.log(walk.fields.routePhotos[0])
   return (
     <div style={{width: '100%'}}>
       <Image

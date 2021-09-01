@@ -5,13 +5,14 @@ import MostPopularCountiesContainer from "../components/MostPopularCountiesConta
 import {
   fetchAllWalks,
   fetchLatestWalks,
+  fetchPopularWalks
 } from "../utils/contentful/getContentfulWalks";
 
-export default function Home({ latestWalks, allCounties }) {
+export default function Home({ latestWalks, allCounties, popularWalks }) {
   return (
     <LayoutHero>
       <LatestWalksContainer latestWalks={latestWalks} />
-      <MostPopularWalksContainer />
+      <MostPopularWalksContainer popularWalks={popularWalks} />
       <MostPopularCountiesContainer mostPopularCounties={allCounties} />
     </LayoutHero>
   );
@@ -20,6 +21,7 @@ export default function Home({ latestWalks, allCounties }) {
 export async function getStaticProps() {
   const latestWalks = await fetchLatestWalks();
   const allWalks = await fetchAllWalks();
+  const popularWalks = await fetchPopularWalks();
   const allCounties = [
     ...new Map(
       allWalks
@@ -34,6 +36,7 @@ export async function getStaticProps() {
     props: {
       latestWalks,
       allCounties,
+      popularWalks
     },
   };
 }
