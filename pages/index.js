@@ -13,7 +13,7 @@ export default function Home({ latestWalks, allCounties, popularWalks }) {
   return (
     <LayoutHero>
             <HeadMeta
-        metaTitle="Dog walking Route Finder"
+        metaTitle="Dog Walking Route Finder"
         metaDescription="Find the perfect dog walking route"
         metaTwitterImage="https://dog-walking.duncanbain.dev/socialcard.jpg"
         metaTwitterImageAlt="A happy looking dog on a walk"
