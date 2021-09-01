@@ -1,39 +1,39 @@
-import NavBar from "../components/NavBar";
-import Hero from "../components/Hero";
+import LayoutHero from "../components/LayoutHero";
 import LatestWalksContainer from "../components/LatestWalksContainer";
 import MostPopularWalksContainer from "../components/MostPopularWalksContainer";
 import MostPopularCountiesContainer from "../components/MostPopularCountiesContainer";
-import Footer from "../components/Footer";
-import { fetchAllWalks, fetchLatestWalks } from "../utils/contentful/getContentfulWalks";
+import {
+  fetchAllWalks,
+  fetchLatestWalks,
+} from "../utils/contentful/getContentfulWalks";
 
-export default function Home({latestWalks, allCounties}) {
+export default function Home({ latestWalks, allCounties }) {
   return (
-    <div className="flex flex-col min-h-screen mx-auto container md:container md:px-16 w-full">
-      <NavBar />
-      <Hero />
-      <main className="px-2 sm:px-0">
-        <LatestWalksContainer latestWalks={latestWalks}/>
-        <MostPopularWalksContainer />
-        <MostPopularCountiesContainer
-          mostPopularCounties={allCounties}
-        />
-      </main>
-      <Footer />
-    </div>
+    <LayoutHero>
+      <LatestWalksContainer latestWalks={latestWalks} />
+      <MostPopularWalksContainer />
+      <MostPopularCountiesContainer mostPopularCounties={allCounties} />
+    </LayoutHero>
   );
 }
 
 export async function getStaticProps() {
   const latestWalks = await fetchLatestWalks();
-  const allWalks = await fetchAllWalks()
-  const allCounties = [...new Map(allWalks.map((walk) => (
-    {
-      "countyNameSlug": walk.fields.countySlug,
-      "countyName": walk.fields.routeCounty,
-    }
-  )).map(item => [item.countyNameSlug, item])).values()]
-  return { props: {
-    latestWalks,
-    allCounties
-  }}
+  const allWalks = await fetchAllWalks();
+  const allCounties = [
+    ...new Map(
+      allWalks
+        .map((walk) => ({
+          countyNameSlug: walk.fields.countySlug,
+          countyName: walk.fields.routeCounty,
+        }))
+        .map((item) => [item.countyNameSlug, item])
+    ).values(),
+  ];
+  return {
+    props: {
+      latestWalks,
+      allCounties,
+    },
+  };
 }
