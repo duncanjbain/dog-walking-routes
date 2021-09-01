@@ -12,10 +12,17 @@ import {
 } from "../../utils/contentful/getContentfulWalks";
 import getLatLon3Words from "../../utils/getWhat3Words";
 import contentfulImage from "../../utils/contentful/contentfulImage";
+import HeadMeta from "../../components/HeadMeta";
 
 const WalkDetails = ({ walk, what3words }) => {
   return (
     <LayoutNoHero>
+      <HeadMeta
+        metaTitle={`Dog walking route at ${walk.fields.routeName}`}
+        metaDescription={`Enjoy a lovely dog walk at ${walk.fields.routeName} in ${walk.fields.routeCounty}`}
+        metaTwitterImage={`https:${walk.fields.routePhotos[0].fields.file.url}`}
+        metaTwitterImageAlt={walk.fields.routePhotos[0].fields.description}
+      />
       <div className="h-96 w-auto relative mb-4">
         <Image
           src={`https:${walk.fields.routePhotos[0].fields.file.url}`}
