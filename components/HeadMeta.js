@@ -24,7 +24,7 @@ const HeadMeta = ({ metaTitle, metaDescription, metaTwitterImage, metaTwitterIma
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={metaTitle} />
       <meta name="twitter:description" content={metaDescription} />
-      <meta name="twitter:image" content={metaTwitterImage} />
+      <meta name="twitter:image" content={`${metaTwitterImage}?w=1200&h=628&q=75`} />
       <meta name="twitter:image:alt" content={metaTwitterImageAlt} />
     </Head>
   );
