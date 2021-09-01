@@ -7,10 +7,17 @@ import {
   fetchLatestWalks,
   fetchPopularWalks
 } from "../utils/contentful/getContentfulWalks";
+import HeadMeta from "../components/HeadMeta";
 
 export default function Home({ latestWalks, allCounties, popularWalks }) {
   return (
     <LayoutHero>
+            <HeadMeta
+        metaTitle="Dog walking Route Finder"
+        metaDescription="Find the perfect dog walking route"
+        metaTwitterImage="https://dog-walking.duncanbain.dev/socialcard.jpg"
+        metaTwitterImageAlt="A happy looking dog on a walk"
+      />
       <LatestWalksContainer latestWalks={latestWalks} />
       <MostPopularWalksContainer popularWalks={popularWalks} />
       <MostPopularCountiesContainer mostPopularCounties={allCounties} />

@@ -1,10 +1,17 @@
 import LayoutNoHero from "../../components/LayoutNoHero";
 import SingleWalkCard from "../../components/SingleWalkCard";
 import { fetchAllWalks } from "../../utils/contentful/getContentfulWalks";
+import HeadMeta from "../../components/HeadMeta";
 
 const AllWalks = ({ allWalks }) => {
   return (
     <LayoutNoHero>
+      <HeadMeta
+        metaTitle="Dog walking routefinder"
+        metaDescription="Find the perfect dog walking route"
+        metaTwitterImage="https://dog-walking.duncanbain.dev/socialcard.jpg"
+        metaTwitterImageAlt="A happy looking dog on a walk"
+      />
       <div className="mb-2 md:mb-8">
         <h2 className="text-gray-600 text-2xl lg:text-3xl font-bold">
           All walks
