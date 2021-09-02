@@ -19,4 +19,4 @@ The frontend uses the following:
 
 The backend uses [Contentful](https://www.contentful.com/) for its Content Management System (CMS).
 
-The site is hosted on (Vercel)[https://vercel.com/].
+The site is hosted on [Vercel](https://vercel.com/).
