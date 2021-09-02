@@ -1,6 +1,6 @@
-# Bug Tracker
+# Dog Walking Routes
 
-![CircleCI](https://img.shields.io/circleci/build/github/duncanjbain/bugtracker/main?logo=circleci&style=for-the-badge) ![GitHub](https://img.shields.io/github/license/duncanjbain/dog-walking-routes?style=for-the-badge)
+![Website](https://img.shields.io/website?style=for-the-badge&url=https%3A%2F%2Fdog-walking.duncanbain.dev) ![GitHub](https://img.shields.io/github/license/duncanjbain/dog-walking-routes?style=for-the-badge)
 
 ### Table of Contents
 - [Introduction](#introduction)
